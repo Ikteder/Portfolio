@@ -1,497 +1,396 @@
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<meta name="viewport" content="height=device-height">
-		<meta author="Revolt">
-		<meta description="Your Name-Project Portfolio">
-		<meta keywords="Your, Name">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Ikteder's Portfolio</title>
-		<!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		<link href='http://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Merriweather:300,400,700,400italic' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ikteder Akhand Udoy — Portfolio</title>
+  <meta name="description" content="Portfolio of Ikteder Akhand Udoy — PhD student in Computer Vision & Data Science at Boise State University, LPiNS Lab." />
 
+  <!-- Favicon set (kept from your original) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-		<style type="text/css">
-			.small-caps {
-			    -ms-font-feature-settings: "smcp";
-			    -moz-font-feature-settings: "smcp";
-			    -webkit-font-feature-settings: "smcp";
-			    font-feature-settings: "smcp";
-			}
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --panel: #121318;
+      --text: #e8e8ea;
+      --muted: #b6b6c1;
+      --accent: #7c5cff;
+      --accent-2: #00d4ff;
+      --chip: #2a2e38;
+      --card: #161821;
+      --maxw: 1100px;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f6f7fb;
+        --panel: #ffffff;
+        --text: #0f1020;
+        --muted: #55596b;
+        --accent: #5c3dff;
+        --accent-2: #008dff;
+        --chip: #eef0f7;
+        --card: #ffffff;
+        --shadow: 0 8px 24px rgba(0,0,0,.08);
+      }
+    }
+    *{ box-sizing: border-box; }
+    html, body{ margin:0; padding:0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+    a{ color: var(--accent-2); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 
-			.text-figures { 
-			    -moz-font-feature-settings: 'onum';
-			    -ms-font-feature-settings: 'onum';
-			    -webkit-font-feature-settings: 'onum';
-			    font-feature-settings: 'onum';
-			}
+    /* Top nav */
+    .nav{
+      position: sticky; top: 0; backdrop-filter: saturate(180%) blur(8px);
+      background: color-mix(in oklab, var(--panel) 88%, transparent);
+      border-bottom: 1px solid color-mix(in oklab, var(--muted), transparent 80%);
+      z-index: 50;
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding: 10px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px;
+    }
+    .brand-badge{
+      width:40px; height:40px; border-radius:12px; background: var(--accent);
+      display:grid; place-items:center; color:#fff; box-shadow: var(--shadow); font-weight:800;
+    }
+    .menu{ display:flex; gap:18px; flex-wrap: wrap; }
+    .menu a{ color: var(--text); opacity:.85; font-weight:600; }
+    .menu a:hover{ opacity:1; }
 
-			body{
-				font-family: 'Merriweather', Georgia, serif;
-				margin: 0;
-				padding: 0;				
-			}
-			h1, h2, h3, h4, h5, h6{
-				font-family: 'Open Sans', sans-serif;
-			}
-			h1{
-				font-size: 48px;
-			}
-			h3{
-				font-size: 24px;
-			}
-			h6{
-				font-size: 22px;
-				font-weight: 300;
-				color: #FFF;
-			}
-			p, .item{
-				font-size: 18px;
-				font-weight: 300;
-				line-height: 1.75;
-			}
-			a{
-				color: #000;
-			}
-			
-			
-			.id_tags{
-				padding: 2px 4px;
-				font-size: 90%;
-				color: rgb(255, 255, 255);
-				background-color: #92898c;
-				border-radius: 4px;
-			}
-			.logo{
-				display: inline-block;
-				position: fixed;
-				left: 10px;
-				top: 10px;
-				z-index: 1000;
-				width: 50px;
-				height: 44px;
-				background: #000;
-				color: #FFF;
-				font-size: 24px;
-				font-weight: 700;
-				text-decoration: none;
-				text-align: center;
-			}
-			.logo:hover{
-				background: #444;
-			}
-			.logo-initial{
-				position: relative;
-				top: 8px;
-			}
-			.special-menu{
-				display: inline-block;
-				position: fixed;
-				left: 3%;
-				bottom: 5%;
-				z-index: 0;
-			}
-			.special-link{
-				border: 1px solid #888;
-				font-style: italic;
-				text-decoration: none;
-				padding: 5px 20px;
-				display: block;
-				font-family: 'Merriweather', serif;
-				text-align: center;
-				font-size: 14px;
-				border-radius: 3px;
-				margin-bottom: 5px;				
-			}
-			.scroll-menu{
-				display: inline-block;
-				position: fixed;
-				left: 3%;
-				top: 22%;
-				z-index: 0;
-			}
-			.scroll-menu .scroll-links{ 
-				font-family: 'Open Sans', sans-serif;
-				display: block;
-				text-decoration: none;
-				padding: 10px 0px;
-				font-size: 12px;
-				color: #000;
-				text-align: center;
-				border-bottom: 1px solid #CCC;
-				text-transform: uppercase;
-			}
-			.scroll-menu .scroll-links.last-link{
-				border-bottom: none;
-			}
-			.full-page{
-				width: 100%;
-				height: 100%;
-				z-index: 100;
-				background-color: #FFF;
-				position: relative;
-			}
+    /* Hero */
+    .hero{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; padding: 32px 0 16px;
+      align-items: center;
+    }
+    .hero h1{ font-size: clamp(28px, 3.5vw, 44px); line-height: 1.1; margin: 0 0 10px; }
+    .hero p{ color: var(--muted); margin: 0 0 18px; }
+    .chip-row{ display:flex; gap:8px; flex-wrap: wrap; margin: 14px 0 22px; }
+    .chip{ background: var(--chip); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 13px; }
+    .cta-row{ display:flex; gap:12px; flex-wrap: wrap; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding: 10px 14px; border-radius: 10px; border:1px solid transparent;
+      background: var(--accent); color:#fff; font-weight:700; box-shadow: var(--shadow);
+    }
+    .btn.secondary{
+      background: transparent; color: var(--accent-2);
+      border-color: color-mix(in oklab, var(--accent-2), transparent 40%);
+    }
+    .hero-portrait{
+      display:grid; place-items:center;
+      background: radial-gradient(120px 120px at 70% 30%, color-mix(in oklab, var(--accent), transparent 60%), transparent), var(--panel);
+      border: 1px solid color-mix(in oklab, var(--muted), transparent 75%);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 12px;
+    }
+    .hero-portrait img{ width: 100%; height: auto; border-radius: 12px; max-width: 380px; }
 
-			.full-page h1, .full-page h6, .full-page a{
-				font-family: Caflisch Script Pro, cursive;
-			}
+    section{ padding: 28px 0; }
+    .section-title{ font-size: 22px; margin: 0 0 12px; }
+    .section-sub{ color: var(--muted); margin: 0 0 18px; font-size: 15px; }
 
-			.full-page a{
-				text-decoration: none;
-				color: #4B0082;
-			}
+    /* Grid cards */
+    .grid{ display:grid; gap:16px; }
+    .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+    .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 920px){ .hero{ grid-template-columns: 1fr; } .hero-portrait{ order: -1; } .grid.cols-3{ grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px){ .grid.cols-3, .grid.cols-2{ grid-template-columns: 1fr; } }
 
-			.full-page h1, .full-page h6{
-				margin: 0px;
-			}
+    .card{
+      background: var(--card);
+      border: 1px solid color-mix(in oklab, var(--muted), transparent 80%);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .card h3{ font-size: 16px; margin: 0; }
+    .card p{ margin: 0; color: var(--muted); }
+    .card .tags{ display:flex; flex-wrap: wrap; gap:6px; }
+    .tag{ background: var(--chip); color: var(--text); padding: 4px 8px; border-radius: 999px; font-size: 12px; }
+    .card .links{ display:flex; gap:12px; margin-top: 4px; }
+    .muted{ color: var(--muted); }
 
-			.full-page h1{
-				font-size: 3em;
-				line-height: 1.2em;
-			}
+    /* List */
+    .list{ display:flex; flex-direction:column; gap:12px; }
+    .pub{ background: var(--panel); border: 1px solid color-mix(in oklab, var(--muted), transparent 80%); border-radius: 12px; padding: 14px; }
+    .pub-title{ font-weight: 700; }
+    .pub-meta{ color: var(--muted); font-size: 14px; }
 
-			.full-page h6{
-				font-size: 1em;
-				color: #666;
-			}
-			.uppercase{
-				text-transform: uppercase;
-			}
+    /* Skills two-column bullets */
+    .skills{
+      display:grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    @media (max-width: 720px){ .skills{ grid-template-columns: 1fr; } }
+    .skills ul{ margin: 0; padding-left: 18px; }
+    .skills li{ margin: 4px 0; }
 
-			.left{
-				width: 50%;
-				height: 100%;
-				display: inline-block;
-				float: left;
-				text-align: center;
-			}
+    /* Footer */
+    .footer{
+      padding: 30px 0 60px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    .contacts{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  </style>
+</head>
+<body>
 
-			.left.black{
-				background: #000;
-				color: #FFF;
-			}
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">IAU</div>
+        <div>Ikteder Akhand Udoy</div>
+      </div>
+      <div class="menu" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-			.wrapper .container{
-				display: table;
-	   			width: 100%;
-	   			height: 100%;
-			}
+  <!-- HERO -->
+  <header class="container hero" id="about">
+    <div>
+      <h1>PhD student in Computer Vision and Data Science at Boise State, LPiNS Lab</h1>
+      <p>
+        I build clean data and training pipelines, validate models with repeatable logs, and bridge software and hardware when deployment matters.
+        I enjoy turning messy inputs into reliable artifacts and clear reports.
+      </p>
+      <div class="chip-row" aria-label="Key areas">
+        <span class="chip">Computer Vision</span>
+        <span class="chip">Deep Learning</span>
+        <span class="chip">Model Efficiency</span>
+        <span class="chip">Data Pipelines</span>
+        <span class="chip">Edge and GPU</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="#projects">Explore Projects</a>
+        <a class="btn secondary" href="#publications">See Publications</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <img src="Images/mee.jpg" alt="Portrait of Ikteder Akhand Udoy" />
+    </div>
+  </header>
 
-			.wrapper .container .dummy{
-				display: table-cell;
-				text-align: center;
-				vertical-align: middle;
-				padding: 0px 10%;
-			}
-			.full-page a.button{
-				text-decoration: none;
-				width: 200px;
-				padding: 10px 0px;
-				margin: 10px 0px;
-				border: 1px solid;
-				display: inline-block;
-				text-transform: uppercase;
-			}
+  <!-- PUBLICATIONS -->
+  <section class="container" id="publications">
+    <h2 class="section-title">Publications</h2>
+    <p class="section-sub">Selected peer-reviewed and preprint works.</p>
+    <div class="list">
+      <div class="pub">
+        <div class="pub-title">
+          <a href="https://www.mdpi.com/2073-8994/17/3/469" target="_blank" rel="noopener">
+            AI-Driven Technology in Heart Failure Detection and Diagnosis: A Review
+          </a>
+        </div>
+        <div class="pub-meta">Symmetry, 2025</div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">
+          <a href="https://ieeexplore.ieee.org/abstract/document/11068064/" target="_blank" rel="noopener">
+            Lightweight Binarized Neural Network for Real-Time Sleep Apnea Detection on Edge Hardware
+          </a>
+        </div>
+        <div class="pub-meta">IEEE MeMeA, 2025</div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">
+          <a href="https://arxiv.org/abs/2407.08839" target="_blank" rel="noopener">
+            A Survey on the Application of Generative Adversarial Networks in Cybersecurity: Prospective, Direction and Open Research Scopes
+          </a>
+        </div>
+        <div class="pub-meta">arXiv, 2024</div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Power of Two Quantization Aware Training for Edge Deployment</div>
+        <div class="pub-meta">under review</div>
+      </div>
+    </div>
+  </section>
 
-			.full-page a.button.white{
-				color: #FFF;
-			}
+  <!-- PROJECTS -->
+  <section class="container" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">A mix of research pipelines, tools, and workshops.</p>
 
-			.full-page a.button.white:hover{
-				background: #222;
-			}
-			.content{
-				width: 65%;
-				margin: 150px auto;
-			}
-			.item{
-				margin-bottom: 30px;
-			}
-			.item .college-name, .item .skill-type{
-				font-weight: 400;
-			}
-			.item .year-address, .item .skills{
-				color: #444;
-			}
-			.grid-collection .item{
-				margin-bottom: 0px;
-				padding: 20px 0px;
-				border-bottom: 1px solid grey;
-			}
-			.grid-item{
-				position: relative;
-				margin-bottom: 50px;
-			}
-			.grid-item .content-wrapper{
-				position: absolute;
-				top: 0px;
-				width: 100%;
-				height: 100%;
-				background: rgba(0,0,0,0.4);
-				opacity: 0;
-				transition: opacity .3s ease-out;
-			    -moz-transition: opacity .3s ease-out;
-			    -webkit-transition: opacity .3s ease-out;
-			    -o-transition: opacity .3s ease-out;
-			    text-align: center;
-			}
-			.grid-item:hover .content-wrapper{
-				opacity: 1;
-			}
-			.grid-item .content-wrapper .button{
-				background: #FFF;
-				padding: 10px 25px;
-				color: #000;
-				text-decoration: none;
-				font-family: 'Open Sans', sans-serif;
-				border-radius: 4px;
-				position: relative;
-				top: -40px;
-				-webkit-transition: all 0.3s ease-out;
-				-moz-transition: all 0.3s ease-out;
-				-o-transition: all 0.3s ease-out;
-				-ms-transition: all 0.3s ease-out;
-				transition: all 0.3s ease-out;
-			}
-			.grid-item:hover .content-wrapper .button{
-				top: 50%;
-			}
-			.contacts a{
-				margin-right: 10px;
-			}
-			a.email{
-				text-decoration: none;
-			}
-			.brief{
-				font-size: 14px;
-				margin-top: 5px;
-			}
-			.item .link{
-				margin-top: 5px;
-			}
+    <div class="grid cols-3">
+      <!-- 1 -->
+      <article class="card">
+        <h3>Fabric ETL Orchestrator</h3>
+        <p>Config-driven Python ETL that ingests raw tables, validates schema and types, runs idempotent batches, and writes tidy outputs with README notes.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">ETL</span><span class="tag">Data Validation</span>
+        </div>
+      </article>
+      <!-- 2 -->
+      <article class="card">
+        <h3>Metrics Hub API</h3>
+        <p>Small JSON service to expose run metrics and health endpoints with request checks, structured logs, and error handling.</p>
+        <div class="tags">
+          <span class="tag">REST</span><span class="tag">APIs</span><span class="tag">Flask or FastAPI</span>
+        </div>
+      </article>
+      <!-- 3 -->
+      <article class="card">
+        <h3>Vision Training Stack</h3>
+        <p>Reproducible pipelines for classification and segmentation with mixed precision, ablations, and export to ONNX and TensorRT.</p>
+        <div class="tags">
+          <span class="tag">PyTorch</span><span class="tag">ONNX</span><span class="tag">TensorRT</span>
+        </div>
+      </article>
+      <!-- 4 -->
+      <article class="card">
+        <h3>Generative Reading and Evaluation Notes</h3>
+        <p>Compact templates to plan experiments, track losses and metrics, and compare runs for diffusion and other generative models.</p>
+        <div class="tags">
+          <span class="tag">Diffusion</span><span class="tag">Evaluation</span>
+        </div>
+      </article>
+      <!-- 5 -->
+      <article class="card">
+        <h3>Multi-Dataset Medical Vision Pipeline</h3>
+        <p>Unified preprocessing and metrics across CheXpert, COVID-19 Radiography, ChestMNIST, BreastMNIST, and EchoNet-Dynamic.</p>
+        <div class="tags">
+          <span class="tag">Data Curation</span><span class="tag">Medical Vision</span>
+        </div>
+      </article>
+      <!-- 6 -->
+      <article class="card">
+        <h3>Shift-Add Inference Simulator</h3>
+        <p>Reconstructs exported models and checks layer outputs to detect numerical or data defects before deployment.</p>
+        <div class="tags">
+          <span class="tag">Model Debug</span><span class="tag">Verification</span>
+        </div>
+      </article>
+      <!-- 7 -->
+      <article class="card">
+        <h3>TinyML Keyword Spotting</h3>
+        <p>Voice command model built from audio collection through training and on-device inference for microcontrollers.</p>
+        <div class="tags">
+          <span class="tag">TinyML</span><span class="tag">KWS</span><span class="tag">Edge</span>
+        </div>
+      </article>
+      <!-- 8 -->
+      <article class="card">
+        <h3>Gesture and Object Detection Workshop</h3>
+        <p>Hands-on curriculum and demos for students to collect data, train models, and test on edge devices.</p>
+        <div class="tags">
+          <span class="tag">Teaching</span><span class="tag">CV</span>
+        </div>
+      </article>
+      <!-- 9 -->
+      <article class="card">
+        <h3>Hospital Management System</h3>
+        <p>Web app with admin, staff, and customer panels plus SMS verification for account security.</p>
+        <div class="tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+        </div>
+      </article>
+      <!-- 10 -->
+      <article class="card">
+        <h3>Brain Tumor Detection CNN</h3>
+        <p>Built and trained a convolutional model for tumor detection with reproducible preprocessing and evaluation.</p>
+        <div class="tags">
+          <span class="tag">TensorFlow</span><span class="tag">CNN</span>
+        </div>
+      </article>
+    </div>
+  </section>
 
-			.project-title{
-				font-weight: 800;
-				font-size: 18px;
-			}
-			.project-description{
-				    margin-top: 10px;
-				    color: #444;
-				    font-size: 14px;
-				    font-weight: 300;
-			}
-			.project-links{
-				font-size: 14px;
-				font-weight: 800;
-				margin-top: 10px;
-			}
-			.img-circle {
-				border-radius: 50%;
-			}
-			/* Small Screens ----------- */
-			@media only screen and (max-width: 767px){
-				.special-menu .special-link{
-					font-size: 12px;
-					padding: 5px;
-				}
-				.scroll-menu{
-					display: none;
-				}
-				.left{
-					width: 100%;
-					height: 50%;
-				}
-				.wrapper .container .dummy{
-					padding: 0;
-				}
-			}
-			@media only screen and (max-height: 480px){
-				.scroll-menu{
-					display: none;
-				}
-				.left{
-					height: auto;
-				}
-			}
-		</style>
-	</head>
+  <!-- SKILLS -->
+  <section class="container" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-sub">Tooling I use most.</p>
+    <div class="skills">
+      <div>
+        <ul>
+          <li><strong>Languages</strong>: Python, Java, C++, SQL, Bash</li>
+          <li><strong>Vision and DL</strong>: PyTorch, TorchVision, TensorFlow, OpenCV</li>
+          <li><strong>Pipelines</strong>: pandas, numpy, matplotlib, CSV and JSON logs</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><strong>Infra</strong>: Linux, Git, GitHub, Docker basics</li>
+          <li><strong>Deployment</strong>: ONNX, TensorRT, mixed precision</li>
+          <li><strong>Teaching</strong>: labs, workshops, reproducible handouts</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-	<body>
-		<!--TODO: change the logo initial from TT to your initials-->
-		<a href="./index.html" class="logo" title="Home"><span class="logo-initial">IAU</span></a>
-		<div class="special-menu">
-			<a href="#top" class="scroll-links special-link">Top</a>
-		</div>
-		<div class="scroll-menu">
-			<a href="#about" class="scroll-links">About</a>
-			<a href="#publications" class="scroll-links">Publications</a>
-			<a href="#projects" class="scroll-links">Projects</a>
-			<a href="#skills" class="scroll-links">Skills</a>
-			<a href="#contact" class="scroll-links last-link">Contact</a>
-		</div>
+  <!-- EDUCATION -->
+  <section class="container" id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Boise State University</h3>
+        <p class="muted">PhD in Computing, Computer Vision and Data Science &middot; 2023 – present</p>
+        <p>LPiNS Lab, advisor Dr. Omiya Hassan</p>
+      </div>
+      <div class="card">
+        <h3>American International University Bangladesh</h3>
+        <p class="muted">BSc in Computer Science and Engineering &middot; 2017 – 2021</p>
+      </div>
+    </div>
+  </section>
 
-		<section class="full-page" id="top">
-			<section class="left white wrapper">
-				<div class="container">
-					<div class="dummy">
-						<h1 class="uppercase">Ikteder Akhand Udoy</h1>
-						<h6 class="uppercase">Data Science | Machine Learning | Artificial Intelligence</h6>
-					</div>
-				</div>
-			</section>
-			<section class="left black wrapper">
-				<div class="container">
-					<div class="dummy">
-						<img class="img-circle" src="Images/mee.jpg" width = "400" height ="auto" >
-						<div><a href="#portfolio" class="button white scroll-links" title="Academics & work experiences">Explore My Work</a></div>
-					</div>
-				</div>
-			</section>
-			<div style="clear: both;"></div>
-		</section>
+  <!-- CONTACT -->
+  <section class="container" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="card">
+      <div class="contacts">
+        <a href="mailto:iktederakhandudo989@boisestate.edu">Email</a>
+        <span class="muted">•</span>
+        <a href="https://github.com/IAU5" target="_blank" rel="noopener">GitHub</a>
+        <span class="muted">•</span>
+        <a href="https://ikteder.github.io/Portfolio/" target="_blank" rel="noopener">Portfolio</a>
+        <span class="muted">•</span>
+        <a href="https://www.linkedin.com/in/ikteder-akhand-udoy-680a4122a" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="muted">•</span>
+        <span>Phone: +1 986 230 7837</span>
+      </div>
+    </div>
+  </section>
 
-		<section class="content" id="portfolio">
-		
-<!----------------------------------------------------ABOUT-ME START--------------------------------------------------------------------------------------->
-			<h1 class="heading" id="about" name="about">About me</h1>
-			<p>
-				Hi there! I am a PhD in Computing emphasized in Data Science student at Boise State University who loves to stay up to date with new techs. I love working on projects related to machine learning, software engineering, artificial intelligence and deep learning. I am currently focused on obtaining a PhD based on my topic of interest and I am eager to learn everything patiently from my mentor in near future. I am experienced in project management, clean coding and good communication. I worked at Playense as Jr.Project Manager. Before joining Playense, I completed my Bachelor's of Science, Computer Science and Engineering degree at American International University-Bangladesh</a> I also worked as a part time teacher at Academia while studying in my undergrade. I completed my internship as an IT executive at an Internet Service Provider company. Apart from my jobs and studies, I love working on making websites and solving random coding problems and playing various online Esports games in my spare time. I also love helping animals in need and try my best to take care of them and save the environment as much as possible.
-			</p>
-<!----------------------------------------------------ABOUT-ME END--------------------------------------------------------------------------------------->
+  <footer class="footer">
+    <div class="container">
+      <div>© <span id="year"></span> Ikteder Akhand Udoy · Boise, Idaho</div>
+    </div>
+  </footer>
 
-<!----------------------------------------------------EDUCATION START--------------------------------------------------------------------------------------->				
-			<h1 class="heading" id="education" name="education">Education</h1>
-			
-			<section class="grid-collection">
-
-				<div class="item">
-					<div class="project-title">PhD in Computing emphasized in Data Science </div>
-					<div class="paper-detail"><b>School/College:</b> Boise State University </div>
-					<!--- <div class="paper-detail"><b>CGPA:</b> 3.68</div> ----->
-					<div class="paper-detail"><b>Duration:</b> 2023-Current</div>
-				</div>
-				
-				<div class="item">
-					<div class="project-title">Bachelor of Science in Computer Science and Engineering </div>
-					<div class="paper-detail"><b>School/College:</b> American International University- Bangladesh</div>
-					<div class="paper-detail"><b>CGPA:</b> 3.68</div>
-					<div class="paper-detail"><b>Duration:</b> 2017-2021</div>
-				</div>
-				
-				<div class="item">
-					<div class="project-title">International Advanced Levels </div>
-					<div class="paper-detail"><b>School/College:</b>Cherry Blossoms International School</div>
-					<!--<div class="paper-detail"><b>CGPA:</b> 8.0</div>-->
-					<div class="paper-detail"><b>Completed on:</b> 2017</div>
-				</div>
-				
-				<div class="item">
-					<div class="project-title">International General Certificate of Secondary Education</div>
-					<div class="paper-detail"><b>School/College:</b>Cherry Blossoms International School</div>
-					<!--<div class="paper-detail"><b>CGPA:</b> 8.0</div>-->
-					<div class="paper-detail"><b>Completed on:</b> 2015</div>
-				</div>
-
-
-			</section>
-<!----------------------------------------------------EDUCATION END--------------------------------------------------------------------------------------->	
-			
-<!----------------------------------------------------PUBLICATION START-------------------------------------------------------------------------------------->		
-			<h1 class="heading" id="publications" name="publications">Research Papers</h1>
-	        
-			<!--Paper 1: START-->
-			<div class="item">
-	        	<div class="paper-detail"><i>[Currently working on] <span class="paper-title"><b> Optimization of Residual Blocks to Detect Brain Tumor Cells,</b><!--  </span><span class="workshop-details"> to <b>Conference 1 Acronym</b> (Conference 1 Full Name)</span>-->  </div>
-	        	<div class="link">
-	        	<!--	<a href="http://ieeexplore.ieee.org/document/7975281/" target="_blank">IEEE Explore Link</a>; -->
-	        	</div>
-	        </div>
-			<!--Paper 1: END-->
-			
-			<!--Paper 2: START-->
-			<div class="item">
-	        	<div class="paper-detail"><i>[Not Submitted] <span class="paper-title"><b>Optimization of Residual Block Design for Style Transfer Using CycleGAN,</b> </span><span class="workshop-details"> to Springer </span></div>
-	        	<div class="link">
-	        		<!--<a href="http://ieeexplore.ieee.org/document/7975281/" target="_blank">IEEE Explore Link</a>; -->
-	        	</div>
-	        </div>
-			<!--Paper 2: END--> 
-                        <!--Paper 3: START-->
-			<div class="item">
-	        	<div class="paper-detail"><i>[Submitted on arxiv] <span class="paper-title"><b>A Survey on the Application of Generative Adversarial Networks in Cybersecurity: Prospective, Direction and Open Research Scopes,</b> </span><span class="workshop-details"> to Arxiv</span></div>
-	        	<div class="link">
-	        		<a href="https://arxiv.org/abs/2407.08839" target="_blank">Arxiv Link</a>;
-	        	</div>
-	        </div>
-			<!--Paper 3: END--> 
-
-<!----------------------------------------------------PUBLICATION END--------------------------------------------------------------------------------------->	
-
-<!----------------------------------------------------PROJECTS START---------------------------------------------------------------------------------------->	
-
-			<h1 class="heading" id="projects" name="projectsml">Projects</h1>
-			<section class="grid-collection">
-				
-				<!--Project 1: START-->
-				<div class="item">
-					<div class="project-title">Use Deep Learning to Identify tumor cells effieciently</div>
-					<div><code class="id_tags">Python</code> <code class="id_tags">Computer Vision</code> <code class="id_tags">Deep Learning</code></div>
-					
-					<div class="project-description">Built and trained a convolutional neural network for tumor detection,using TensorFlow and Keras. </div>
-					<div class="project-links">
-						<!--<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Behavioral-Cloning-P3/writeup_template.md" target="_blank">Report</a>; 
-						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Behavioral-Cloning-P3" target="_blank">Code</a> -->
-					</div>
-				</div>
-				<!--Project 1: END-->
-				
-				<!--Project 2: START-->
-				<div class="item">
-					<div class="project-title">Hospital Management System</div>
-					<div><code class="id_tags">HTML</code> <code class="id_tags">CSS</code> <code class="id_tags">JAVA SCRIPT</code></div>
-					
-					<div class="project-description">Created a website and made all the necessary panels such as admin , customers, staff.It also had real time sms verification code system. </div>
-					<div class="project-links">
-						<!--<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Vehicle-Detection-P5/writeup.md" target="_blank">Report</a>; 
-						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Vehicle-Detection-P5" target="_blank">Code</a> -->
-					</div>
-				</div>
-				<!--Project 2: END-->
-
-			</section>
-<!----------------------------------------------------PROJECTS END---------------------------------------------------------------------------------------->				
-
-<!----------------------------------------------------SKILLS START---------------------------------------------------------------------------------------->				
-			<h1 class="heading" id="skills" name="skills">Technical Skills</h1>
-			<div class="item">
-					<div class="paper-detail"><b>Languages:</b> C, C++, C#, Python, Java, HTML,CSS, LaTeX, Shell Script, SQL,</div>
-					<div class="paper-detail"><b>Software & Technologies:</b> Pycharm,Jupyter Notebook,MySQL, ORACLE, Microsoft Visual Studio Code, Eclipse,Android Studio, Netbeans</div>
-				</div>
-
-<!----------------------------------------------------SKILLS END---------------------------------------------------------------------------------------->			
-
-			<h1 class="heading" id="contact" name="contact">Contact</h1>
-			<p class="contacts">
-				<div>
-					<a href="mailto:ikteder.akhand@gmail.com">Email me</a>
-					<a> or </a>
-					<a href="mailto:iktederakhandudo989@u.boisestate.edu"> Email me here</a>
-					<a><b> Phone:</b> +19862307837 </a>
-					<a href="https://www.linkedin.com/in/ikteder-akhand-udoy-680a4122a" target="www.linkedin.com/in/ikteder-akhand-udoy-680a4122a">LinkedIn</a>
-				</div>
-			</p>
-		</section>
-	</body>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="./assets/thirdparty/scrollTo.min.js"></script>
-	<script>
-		$('.scroll-links').scrollTo();
-	</script>
+  <script>
+    // Smooth scroll for same-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length > 1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
