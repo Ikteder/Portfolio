@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -6,12 +7,21 @@
   <title>Ikteder Akhand Udoy — Portfolio</title>
   <meta name="description" content="Portfolio of Ikteder Akhand Udoy — PhD student in Computer Vision and Data Science at Boise State University, LPiNS Lab." />
 
+  <!--
+    GitHub Pages note:
+    If your site is hosted at https://ikteder.github.io/Portfolio/
+    keep /Portfolio/ in the favicon paths below.
+    If your repo name is different, replace Portfolio with your repo name.
+  -->
+
   <!-- FAVICONS (ROOT FOLDER) -->
-  <link rel="icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="icon" href="/Portfolio/favicon.ico" />
+  <link rel="shortcut icon" href="/Portfolio/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/Portfolio/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/Portfolio/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/Portfolio/apple-touch-icon.png" />
+  <link rel="manifest" href="/Portfolio/site.webmanifest" />
 
   <style>
     :root{
@@ -74,8 +84,25 @@
       display:grid; place-items:center; color:#fff; box-shadow: var(--shadow); font-weight:800;
       flex: 0 0 auto;
     }
-    .menu{ display:flex; gap:18px; flex-wrap: wrap; justify-content: flex-end; }
-    .menu a{ color: var(--text); opacity:.85; font-weight:600; font-size: 13px; }
+
+    /* Make menu behave like scrollable tabs on mobile (stays clean) */
+    .menu{
+      display:flex; gap:18px;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .menu::-webkit-scrollbar{ display:none; }
+    .menu a{
+      color: var(--text);
+      opacity:.85;
+      font-weight:600;
+      font-size: 13px;
+      white-space: nowrap;
+      padding: 6px 2px;
+    }
     .menu a:hover{ opacity:1; }
 
     /* HERO */
@@ -175,6 +202,7 @@
     .contacts{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
     .dot{ color: var(--muted); }
   </style>
+
 </head>
 
 <body>
@@ -197,6 +225,7 @@
   </nav>
 
   <!-- HERO -->
+
   <header class="container hero" id="top">
     <div>
       <h1>PhD student in Computer Vision and Data Science at Boise State, LPiNS Lab</h1>
@@ -222,6 +251,7 @@
   </header>
 
   <!-- EDUCATION (FIRST) -->
+
   <section class="container" id="education">
     <h2 class="section-title">Education</h2>
     <p class="section-sub">Current degree and background.</p>
@@ -239,180 +269,197 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE (NOW INCLUDED) -->
+  <!-- EXPERIENCE -->
+
   <section class="container" id="experience">
     <h2 class="section-title">Experience</h2>
     <p class="section-sub">Research, teaching support, and industry experience.</p>
 
-    <div class="grid cols-2">
-      <div class="card">
-        <h3>Graduate Research Assistant · Boise State University, LPiNS Lab</h3>
-        <p class="muted">2023 to present · Boise, Idaho</p>
-        <p>
-          Research role with hands-on engineering work in data pipelines, deep learning experiments, and reproducibility.
-          Teaching support responsibilities are included in the same role.
-        </p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Data Pipelines</span>
-          <span class="tag">Deep Learning</span>
-          <span class="tag">Reproducibility</span>
-        </div>
-        <ul class="muted" style="margin: 0; padding-left: 18px;">
-          <li>Built Python pipelines to ingest and standardize multi-source datasets into a single schema for repeatable analysis.</li>
-          <li>Designed structured experiments and logged metrics to CSV for A versus B comparisons, plots, and clean README notes.</li>
-          <li>Wrote export and verify scripts to replay runs and flag mismatches, similar to unit tests for model stages.</li>
-          <li>Supported courses in algorithms, data structures, and digital systems by reviewing code, debugging edge cases, and helping teams run on Linux lab machines.</li>
-          <li>Delivered an IEEE TinyML workshop in 2025, guiding students from data collection to on-device testing with repeatable handouts.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Junior Project Manager · Playense</h3>
-        <p class="muted">2021 to 2023</p>
-        <p>Coordinated software tasks across contributors and kept delivery organized through clear updates and tracking.</p>
-        <div class="tags">
-          <span class="tag">Coordination</span>
-          <span class="tag">Documentation</span>
-          <span class="tag">Delivery</span>
-        </div>
-        <ul class="muted" style="margin: 0; padding-left: 18px;">
-          <li>Tracked issues, clarified requirements, and communicated status to technical and non-technical partners.</li>
-          <li>Helped teams stay aligned on timelines, risks, and priorities through concise reporting.</li>
-        </ul>
-      </div>
+```
+<div class="grid cols-2">
+  <div class="card">
+    <h3>Graduate Research Assistant · Boise State University, LPiNS Lab</h3>
+    <p class="muted">2023 to present · Boise, Idaho</p>
+    <p>
+      Research role with hands-on engineering work in data pipelines, deep learning experiments, and reproducibility.
+      Teaching support responsibilities are included in the same role.
+    </p>
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">Data Pipelines</span>
+      <span class="tag">Deep Learning</span>
+      <span class="tag">Reproducibility</span>
     </div>
+    <ul class="muted" style="margin: 0; padding-left: 18px;">
+      <li>Built Python pipelines to ingest and standardize multi-source datasets into a single schema for repeatable analysis.</li>
+      <li>Designed structured experiments and logged metrics to CSV for A versus B comparisons, plots, and clean README notes.</li>
+      <li>Wrote export and verify scripts to replay runs and flag mismatches, similar to unit tests for model stages.</li>
+      <li>Supported courses in algorithms, data structures, and digital systems by reviewing code, debugging edge cases, and helping teams run on Linux lab machines.</li>
+      <li>Delivered an IEEE TinyML workshop in 2025, guiding students from data collection to on-device testing with repeatable handouts.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Junior Project Manager · Playense</h3>
+    <p class="muted">2021 to 2023</p>
+    <p>Coordinated software tasks across contributors and kept delivery organized through clear updates and tracking.</p>
+    <div class="tags">
+      <span class="tag">Coordination</span>
+      <span class="tag">Documentation</span>
+      <span class="tag">Delivery</span>
+    </div>
+    <ul class="muted" style="margin: 0; padding-left: 18px;">
+      <li>Tracked issues, clarified requirements, and communicated status to technical and non-technical partners.</li>
+      <li>Helped teams stay aligned on timelines, risks, and priorities through concise reporting.</li>
+    </ul>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- PROJECTS -->
+
   <section class="container" id="projects">
     <h2 class="section-title">Projects</h2>
     <p class="section-sub">A mix of research pipelines, tools, and teaching-focused builds.</p>
 
-    <div class="grid cols-3">
-      <article class="card">
-        <h3>Multi-Dataset Medical Vision Pipeline</h3>
-        <p>Unified preprocessing and metrics across CheXpert, COVID-19 Radiography, ChestMNIST, BreastMNIST, and EchoNet-Dynamic.</p>
-        <div class="tags"><span class="tag">Data Curation</span><span class="tag">Medical Vision</span><span class="tag">Python</span></div>
-      </article>
+```
+<div class="grid cols-3">
+  <article class="card">
+    <h3>Multi-Dataset Medical Vision Pipeline</h3>
+    <p>Unified preprocessing and metrics across CheXpert, COVID-19 Radiography, ChestMNIST, BreastMNIST, and EchoNet-Dynamic.</p>
+    <div class="tags"><span class="tag">Data Curation</span><span class="tag">Medical Vision</span><span class="tag">Python</span></div>
+  </article>
 
-      <article class="card">
-        <h3>Vision Training Stack</h3>
-        <p>Reproducible classification and segmentation training with ablations, clean logs, and export-focused packaging.</p>
-        <div class="tags"><span class="tag">PyTorch</span><span class="tag">Segmentation</span><span class="tag">Experiment Logs</span></div>
-      </article>
+  <article class="card">
+    <h3>Vision Training Stack</h3>
+    <p>Reproducible classification and segmentation training with ablations, clean logs, and export-focused packaging.</p>
+    <div class="tags"><span class="tag">PyTorch</span><span class="tag">Segmentation</span><span class="tag">Experiment Logs</span></div>
+  </article>
 
-      <article class="card">
-        <h3>Shift Add Inference Simulator</h3>
-        <p>Reconstructs exported models and checks stage outputs to catch numerical or data defects before deployment.</p>
-        <div class="tags"><span class="tag">Verification</span><span class="tag">Model Debug</span><span class="tag">Python</span></div>
-      </article>
+  <article class="card">
+    <h3>Shift Add Inference Simulator</h3>
+    <p>Reconstructs exported models and checks stage outputs to catch numerical or data defects before deployment.</p>
+    <div class="tags"><span class="tag">Verification</span><span class="tag">Model Debug</span><span class="tag">Python</span></div>
+  </article>
 
-      <article class="card">
-        <h3>Fabric ETL Orchestrator</h3>
-        <p>Config-driven ETL that ingests tables, validates schema and types, runs idempotent batches, and writes tidy outputs with README notes.</p>
-        <div class="tags"><span class="tag">ETL</span><span class="tag">Validation</span><span class="tag">Pipelines</span></div>
-      </article>
+  <article class="card">
+    <h3>Fabric ETL Orchestrator</h3>
+    <p>Config-driven ETL that ingests tables, validates schema and types, runs idempotent batches, and writes tidy outputs with README notes.</p>
+    <div class="tags"><span class="tag">ETL</span><span class="tag">Validation</span><span class="tag">Pipelines</span></div>
+  </article>
 
-      <article class="card">
-        <h3>Metrics Hub API</h3>
-        <p>Small JSON service to expose run metrics and health endpoints with structured logs and error handling.</p>
-        <div class="tags"><span class="tag">REST</span><span class="tag">APIs</span><span class="tag">JSON</span></div>
-      </article>
+  <article class="card">
+    <h3>Metrics Hub API</h3>
+    <p>Small JSON service to expose run metrics and health endpoints with structured logs and error handling.</p>
+    <div class="tags"><span class="tag">REST</span><span class="tag">APIs</span><span class="tag">JSON</span></div>
+  </article>
 
-      <article class="card">
-        <h3>TinyML Keyword Spotting</h3>
-        <p>Voice command model from audio collection to training and on-device inference for microcontrollers.</p>
-        <div class="tags"><span class="tag">TinyML</span><span class="tag">KWS</span><span class="tag">Edge</span></div>
-      </article>
+  <article class="card">
+    <h3>TinyML Keyword Spotting</h3>
+    <p>Voice command model from audio collection to training and on-device inference for microcontrollers.</p>
+    <div class="tags"><span class="tag">TinyML</span><span class="tag">KWS</span><span class="tag">Edge</span></div>
+  </article>
 
-      <article class="card">
-        <h3>Gesture and Object Detection Workshop</h3>
-        <p>Hands-on curriculum for students to collect data, train models, and test on edge devices.</p>
-        <div class="tags"><span class="tag">Teaching</span><span class="tag">CV</span><span class="tag">Deployment</span></div>
-      </article>
+  <article class="card">
+    <h3>Gesture and Object Detection Workshop</h3>
+    <p>Hands-on curriculum for students to collect data, train models, and test on edge devices.</p>
+    <div class="tags"><span class="tag">Teaching</span><span class="tag">CV</span><span class="tag">Deployment</span></div>
+  </article>
 
-      <article class="card">
-        <h3>Brain Tumor Detection CNN</h3>
-        <p>Convolutional model for tumor detection with reproducible preprocessing and evaluation.</p>
-        <div class="tags"><span class="tag">TensorFlow</span><span class="tag">CNN</span><span class="tag">CV</span></div>
-      </article>
+  <article class="card">
+    <h3>Brain Tumor Detection CNN</h3>
+    <p>Convolutional model for tumor detection with reproducible preprocessing and evaluation.</p>
+    <div class="tags"><span class="tag">TensorFlow</span><span class="tag">CNN</span><span class="tag">CV</span></div>
+  </article>
 
-      <article class="card">
-        <h3>Hospital Management System</h3>
-        <p>Web app with admin, staff, and customer panels and SMS verification for account security.</p>
-        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-      </article>
-    </div>
+  <article class="card">
+    <h3>Hospital Management System</h3>
+    <p>Web app with admin, staff, and customer panels and SMS verification for account security.</p>
+    <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+  </article>
+</div>
+```
+
   </section>
 
   <!-- PUBLICATIONS -->
+
   <section class="container" id="publications">
     <h2 class="section-title">Publications</h2>
     <p class="section-sub">Selected papers and preprints.</p>
 
-    <div class="list">
-      <div class="pub">
-        <div class="pub-title">
-          <a href="https://www.mdpi.com/2073-8994/17/3/469" target="_blank" rel="noopener">
-            AI Driven Technology in Heart Failure Detection and Diagnosis: A Review
-          </a>
-        </div>
-        <div class="pub-meta">Symmetry · 2025</div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title">
-          <a href="https://ieeexplore.ieee.org/abstract/document/11068064/" target="_blank" rel="noopener">
-            Lightweight Binarized Neural Network for Real Time Sleep Apnea Detection on Edge Hardware
-          </a>
-        </div>
-        <div class="pub-meta">IEEE MeMeA · 2025</div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title">
-          <a href="https://arxiv.org/abs/2407.08839" target="_blank" rel="noopener">
-            A Survey on the Application of Generative Adversarial Networks in Cybersecurity: Prospective, Direction and Open Research Scopes
-          </a>
-        </div>
-        <div class="pub-meta">arXiv · 2024</div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title">Power of Two Quantization Aware Training for Edge Deployment</div>
-        <div class="pub-meta">Under review</div>
-      </div>
+```
+<div class="list">
+  <div class="pub">
+    <div class="pub-title">
+      <a href="https://www.mdpi.com/2073-8994/17/3/469" target="_blank" rel="noopener">
+        AI Driven Technology in Heart Failure Detection and Diagnosis: A Review
+      </a>
     </div>
+    <div class="pub-meta">Symmetry · 2025</div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-title">
+      <a href="https://ieeexplore.ieee.org/abstract/document/11068064/" target="_blank" rel="noopener">
+        Lightweight Binarized Neural Network for Real Time Sleep Apnea Detection on Edge Hardware
+      </a>
+    </div>
+    <div class="pub-meta">IEEE MeMeA · 2025</div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-title">
+      <a href="https://arxiv.org/abs/2407.08839" target="_blank" rel="noopener">
+        A Survey on the Application of Generative Adversarial Networks in Cybersecurity: Prospective, Direction and Open Research Scopes
+      </a>
+    </div>
+    <div class="pub-meta">arXiv · 2024</div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-title">Power of Two Quantization Aware Training for Edge Deployment</div>
+    <div class="pub-meta">Under review</div>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- SKILLS -->
+
   <section class="container" id="skills">
     <h2 class="section-title">Skills</h2>
     <p class="section-sub">Things I use most often.</p>
 
-    <div class="skills">
-      <div class="card">
-        <h3>Core</h3>
-        <ul>
-          <li><strong>Languages</strong>: Python, Java, C plus plus, SQL, Bash</li>
-          <li><strong>CS</strong>: data structures, algorithms, debugging, clean code</li>
-          <li><strong>Workflow</strong>: Git, GitHub, reproducible experiments</li>
-        </ul>
-      </div>
+```
+<div class="skills">
+  <div class="card">
+    <h3>Core</h3>
+    <ul>
+      <li><strong>Languages</strong>: Python, Java, C++, SQL, Bash</li>
+      <li><strong>CS</strong>: data structures, algorithms, debugging, clean code</li>
+      <li><strong>Workflow</strong>: Git, GitHub, reproducible experiments</li>
+    </ul>
+  </div>
 
-      <div class="card">
-        <h3>Vision and ML</h3>
-        <ul>
-          <li><strong>Deep learning</strong>: PyTorch, TorchVision, TensorFlow</li>
-          <li><strong>Data</strong>: pandas, numpy, matplotlib, CSV and JSON logs</li>
-          <li><strong>Platforms</strong>: Linux, Colab, Jupyter, Docker basics</li>
-        </ul>
-      </div>
-    </div>
+  <div class="card">
+    <h3>Vision and ML</h3>
+    <ul>
+      <li><strong>Deep learning</strong>: PyTorch, TorchVision, TensorFlow</li>
+      <li><strong>Data</strong>: pandas, numpy, matplotlib, CSV and JSON logs</li>
+      <li><strong>Platforms</strong>: Linux, Colab, Jupyter, Docker basics</li>
+    </ul>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- CONTACT -->
+
   <section class="container" id="contact">
     <h2 class="section-title">Contact</h2>
     <div class="card">
@@ -422,6 +469,8 @@
         <a href="https://github.com/IAU5" target="_blank" rel="noopener">GitHub</a>
         <span class="dot">•</span>
         <a href="https://ikteder.github.io/Portfolio/" target="_blank" rel="noopener">Portfolio</a>
+        <span class="dot">•</span>
+        <a href="https://scholar.google.com/citations?hl=en&user=7CEKc9wAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
         <span class="dot">•</span>
         <a href="https://www.linkedin.com/in/ikteder-akhand-udoy-680a4122a" target="_blank" rel="noopener">LinkedIn</a>
         <span class="dot">•</span>
@@ -454,5 +503,6 @@
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
