@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -7,15 +6,8 @@
   <title>Ikteder Akhand Udoy — Portfolio</title>
   <meta name="description" content="Portfolio of Ikteder Akhand Udoy — PhD student in Computer Vision and Data Science at Boise State University, LPiNS Lab." />
 
-  <!--
-    GitHub Pages note:
-    If your site is hosted at https://ikteder.github.io/Portfolio/
-    keep /Portfolio/ in the favicon paths below.
-    If your repo name is different, replace Portfolio with your repo name.
-  -->
-
-  <!-- FAVICONS (ROOT FOLDER) -->
-
+  <!-- GitHub Pages: hosted at https://ikteder.github.io/Portfolio/ -->
+  <!-- Favicons live in repo root, so keep /Portfolio/ prefix -->
   <link rel="icon" href="/Portfolio/favicon.ico" />
   <link rel="shortcut icon" href="/Portfolio/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/Portfolio/favicon-32x32.png" />
@@ -26,136 +18,256 @@
   <style>
     :root{
       --bg: #0b0c10;
-      --panel: #121318;
+      --panel: #0f1117;
+      --panel2: #121318;
       --text: #e8e8ea;
       --muted: #b6b6c1;
+
       --accent: #7c5cff;
-      --accent-2: #00d4ff;
-      --chip: #2a2e38;
-      --card: #161821;
+      --accent2: #00d4ff;
+
+      --chip: #232735;
+      --card: #121525;
+
       --maxw: 1100px;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --border: color-mix(in oklab, var(--muted), transparent 80%);
+      --radius: 18px;
+
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+      --shadow2: 0 10px 24px rgba(0,0,0,.22);
+
+      --border: rgba(255,255,255,.10);
+      --border2: rgba(255,255,255,.14);
     }
+
     @media (prefers-color-scheme: light){
       :root{
         --bg: #f6f7fb;
         --panel: #ffffff;
+        --panel2: #ffffff;
         --text: #0f1020;
-        --muted: #55596b;
+        --muted: #5b6073;
+
         --accent: #5c3dff;
-        --accent-2: #008dff;
+        --accent2: #0077ff;
+
         --chip: #eef0f7;
         --card: #ffffff;
-        --shadow: 0 8px 24px rgba(0,0,0,.08);
-        --border: color-mix(in oklab, var(--muted), transparent 80%);
+
+        --shadow: 0 12px 28px rgba(0,0,0,.12);
+        --shadow2: 0 8px 20px rgba(0,0,0,.10);
+
+        --border: rgba(15,16,32,.12);
+        --border2: rgba(15,16,32,.14);
       }
     }
 
-    *{ box-sizing: border-box; }
-    html, body{ margin:0; padding:0; background: var(--bg); color: var(--text); }
+    *{ box-sizing:border-box; }
+    html, body{ margin:0; padding:0; background:var(--bg); color:var(--text); }
     body{
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
                    "Apple Color Emoji","Segoe UI Emoji";
+      line-height: 1.45;
     }
-    a{ color: var(--accent-2); text-decoration: none; }
+    a{ color: var(--accent2); text-decoration: none; }
     a:hover{ text-decoration: underline; }
     .container{ max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 
-    /* NAV */
+    /* ---------- NAV ---------- */
     .nav{
-      position: sticky; top: 0;
-      backdrop-filter: saturate(180%) blur(8px);
+      position: sticky; top: 0; z-index: 50;
       background: color-mix(in oklab, var(--panel) 88%, transparent);
       border-bottom: 1px solid var(--border);
-      z-index: 50;
+      backdrop-filter: saturate(180%) blur(10px);
     }
     .nav-inner{
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
       padding: 10px 0;
     }
     .brand{
-      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px;
+      display:flex; align-items:center; gap:10px;
+      font-weight: 800; letter-spacing: .2px;
       min-width: 220px;
+      user-select: none;
     }
     .brand-badge{
-      width:40px; height:40px; border-radius:12px; background: var(--accent);
-      display:grid; place-items:center; color:#fff; box-shadow: var(--shadow); font-weight:800;
+      width:40px; height:40px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent2), transparent 35%));
+      box-shadow: var(--shadow2);
+      display:grid; place-items:center;
+      font-weight: 900; color:#fff;
       flex: 0 0 auto;
     }
 
-    /* Make menu behave like scrollable tabs on mobile (stays clean) */
+    /* Desktop menu */
     .menu{
-      display:flex; gap:18px;
-      flex-wrap: nowrap;
-      justify-content: flex-end;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      display:flex; align-items:center; gap:16px; flex-wrap: wrap; justify-content:flex-end;
     }
-    .menu::-webkit-scrollbar{ display:none; }
     .menu a{
       color: var(--text);
-      opacity:.85;
-      font-weight:600;
+      opacity:.88;
+      font-weight: 700;
       font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: transform .12s ease, opacity .12s ease, border-color .12s ease, background .12s ease;
       white-space: nowrap;
-      padding: 6px 2px;
     }
-    .menu a:hover{ opacity:1; }
+    .menu a:hover{
+      opacity: 1;
+      text-decoration: none;
+      background: color-mix(in oklab, var(--chip) 75%, transparent);
+      border-color: var(--border2);
+      transform: translateY(-1px);
+    }
 
-    /* HERO */
+    /* Mobile nav: wraps cleanly (NO horizontal overflow => NO “…” hints) */
+    @media (max-width: 720px){
+      .nav-inner{ align-items:flex-start; }
+      .brand{ min-width: unset; }
+      .menu{
+        gap: 8px;
+        justify-content:flex-start;
+      }
+      .menu a{ padding: 6px 8px; }
+    }
+
+    /* ---------- HERO ---------- */
     .hero{
-      display:grid; grid-template-columns: 1.2fr .8fr; gap:28px;
-      padding: 32px 0 16px; align-items: center;
+      padding: 34px 0 10px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 26px;
+      align-items: center;
     }
-    .hero h1{ font-size: clamp(28px, 3.5vw, 44px); line-height: 1.1; margin: 0 0 10px; }
-    .hero p{ color: var(--muted); margin: 0 0 18px; }
-    .chip-row{ display:flex; gap:8px; flex-wrap: wrap; margin: 14px 0 22px; }
-    .chip{ background: var(--chip); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 13px; }
-    .cta-row{ display:flex; gap:12px; flex-wrap: wrap; }
+
+    .hero-card{
+      background:
+        radial-gradient(900px 400px at 15% 0%, color-mix(in oklab, var(--accent), transparent 70%), transparent),
+        radial-gradient(700px 360px at 80% 20%, color-mix(in oklab, var(--accent2), transparent 78%), transparent),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .hero h1{
+      font-size: clamp(28px, 3.6vw, 46px);
+      line-height: 1.08;
+      margin: 0 0 10px;
+      letter-spacing: -0.3px;
+    }
+    .hero p{
+      color: var(--muted);
+      margin: 0 0 14px;
+      font-size: 15.5px;
+    }
+
+    .chip-row{ display:flex; gap:8px; flex-wrap: wrap; margin: 14px 0 16px; }
+    .chip{
+      background: color-mix(in oklab, var(--chip) 85%, transparent);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    .cta-row{ display:flex; gap:10px; flex-wrap: wrap; margin-top: 14px; }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding: 10px 14px; border-radius: 10px; border:1px solid transparent;
-      background: var(--accent); color:#fff; font-weight:700; box-shadow: var(--shadow);
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      background: linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent2), transparent 30%));
+      color:#fff;
+      font-weight: 800;
+      box-shadow: var(--shadow2);
+      transition: transform .12s ease, filter .12s ease;
     }
+    .btn:hover{ text-decoration:none; transform: translateY(-1px); filter: brightness(1.02); }
     .btn.secondary{
-      background: transparent; color: var(--accent-2);
-      border-color: color-mix(in oklab, var(--accent-2), transparent 40%);
+      background: transparent;
+      color: var(--accent2);
+      border-color: color-mix(in oklab, var(--accent2), transparent 40%);
+      box-shadow: none;
+    }
+    .btn.secondary:hover{
+      background: color-mix(in oklab, var(--chip) 70%, transparent);
+    }
+
+    .quick-links{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--panel2) 90%, transparent);
+      color: var(--text);
+      font-weight: 750;
+      font-size: 12.5px;
+      opacity: .92;
+    }
+    .pill:hover{
+      text-decoration:none;
+      opacity: 1;
+      border-color: var(--border2);
+      background: color-mix(in oklab, var(--chip) 70%, transparent);
+    }
+    .pill .dot{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--accent2);
+      box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent2), transparent 75%);
     }
 
     .hero-portrait{
-      display:grid; place-items:center;
-      background:
-        radial-gradient(120px 120px at 70% 30%, color-mix(in oklab, var(--accent), transparent 60%), transparent),
-        var(--panel);
+      background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: calc(var(--radius) + 6px);
       box-shadow: var(--shadow);
       padding: 12px;
+      display:grid; place-items:center;
+      overflow:hidden;
+      min-height: 240px;
     }
     .hero-portrait img{
-      width: 100%; height: auto; border-radius: 12px; max-width: 380px;
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      border-radius: 14px;
       display:block;
+      transform: translateZ(0);
     }
 
-    section{ padding: 28px 0; }
-    .section-title{ font-size: 22px; margin: 0 0 12px; }
-    .section-sub{ color: var(--muted); margin: 0 0 18px; font-size: 15px; }
-
-    /* GRID */
-    .grid{ display:grid; gap:16px; }
-    .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
-    .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
     @media (max-width: 920px){
       .hero{ grid-template-columns: 1fr; }
       .hero-portrait{ order: -1; }
+    }
+
+    /* ---------- SECTION ---------- */
+    section{ padding: 26px 0; }
+    .section-title{ font-size: 22px; margin: 0 0 10px; letter-spacing: -0.2px; }
+    .section-sub{ color: var(--muted); margin: 0 0 18px; font-size: 15px; }
+
+    /* ---------- GRID / CARDS ---------- */
+    .grid{ display:grid; gap:16px; }
+    .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+    .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
+
+    @media (max-width: 920px){
       .grid.cols-3{ grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 640px){
       .grid.cols-3, .grid.cols-2{ grid-template-columns: 1fr; }
-      .brand{ min-width: unset; }
     }
 
     .card{
@@ -163,46 +275,73 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 16px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow2);
       display:flex; flex-direction:column; gap:10px;
+      transition: transform .12s ease, border-color .12s ease;
     }
-    .card h3{ font-size: 16px; margin: 0; }
+    .card:hover{ transform: translateY(-1px); border-color: var(--border2); }
+    .card h3{ font-size: 16px; margin: 0; letter-spacing: -0.1px; }
     .card p{ margin: 0; color: var(--muted); }
-    .card .tags{ display:flex; flex-wrap: wrap; gap:6px; }
-    .tag{ background: var(--chip); color: var(--text); padding: 4px 8px; border-radius: 999px; font-size: 12px; }
-    .muted{ color: var(--muted); }
+    .tags{ display:flex; flex-wrap: wrap; gap:6px; }
+    .tag{
+      background: color-mix(in oklab, var(--chip) 86%, transparent);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 750;
+      opacity: .95;
+    }
 
-    /* Publication list */
+    /* ---------- LISTS ---------- */
+    ul.clean{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    ul.clean li{ margin: 6px 0; }
+
+    /* Publications */
     .list{ display:flex; flex-direction:column; gap:12px; }
     .pub{
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 14px;
+      box-shadow: var(--shadow2);
     }
-    .pub-title{ font-weight: 750; }
+    .pub-title{ font-weight: 850; }
     .pub-meta{ color: var(--muted); font-size: 14px; margin-top: 4px; }
 
-    /* Skills two-column bullets */
-    .skills{
-      display:grid; grid-template-columns: 1fr 1fr; gap: 16px;
-      align-items: start;
-    }
+    /* Skills */
+    .skills{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media (max-width: 720px){ .skills{ grid-template-columns: 1fr; } }
-    .skills ul{ margin: 0; padding-left: 18px; }
-    .skills li{ margin: 6px 0; }
+
+    /* Contact */
+    .contacts{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+      align-items:center;
+      color: var(--muted);
+    }
+    .sep{ color: var(--muted); opacity: .8; }
 
     /* Footer */
     .footer{
-      padding: 30px 0 60px;
+      padding: 34px 0 60px;
       color: var(--muted);
       font-size: 14px;
       text-align: center;
     }
-    .contacts{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-    .dot{ color: var(--muted); }
-  </style>
 
+    /* Motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
 </head>
 
 <body>
@@ -225,268 +364,243 @@
   </nav>
 
   <!-- HERO -->
-
   <header class="container hero" id="top">
-    <div>
-      <h1>PhD student in Computer Vision and Data Science at Boise State, LPiNS Lab</h1>
+    <div class="hero-card">
+      <h1>PhD student in Computer Vision and Data Science at Boise State (LPiNS Lab)</h1>
       <p>
-        I build clean data and training pipelines, validate models with repeatable logs, and bridge software and hardware when deployment matters.
-        I like turning messy inputs into reliable artifacts and clear reports.
+        I build reliable ML pipelines and evaluation tooling—clean data ingestion, reproducible experiments, and deployment-aware verification.
+        Lately I’ve also been working on LLM workflows and evaluation for my Po2-QAT research.
       </p>
+
       <div class="chip-row" aria-label="Key areas">
         <span class="chip">Computer Vision</span>
-        <span class="chip">Deep Learning</span>
-        <span class="chip">Model Efficiency</span>
+        <span class="chip">GenAI / LLMs</span>
+        <span class="chip">Model Efficiency (Po2-QAT)</span>
         <span class="chip">Data Pipelines</span>
-        <span class="chip">Edge and GPU</span>
+        <span class="chip">Edge / GPU</span>
       </div>
+
       <div class="cta-row">
         <a class="btn" href="#projects">Explore Projects</a>
         <a class="btn secondary" href="#publications">See Publications</a>
       </div>
+
+      <div class="quick-links" aria-label="Quick links">
+        <a class="pill" href="mailto:iktederakhandudo989@boisestate.edu"><span class="dot"></span>Email</a>
+        <a class="pill" href="https://www.linkedin.com/in/ikteder-akhand-udoy-680a4122a" target="_blank" rel="noopener"><span class="dot"></span>LinkedIn</a>
+        <a class="pill" href="https://github.com/IAU5" target="_blank" rel="noopener"><span class="dot"></span>GitHub</a>
+        <a class="pill" href="https://scholar.google.com/citations?hl=en&user=7CEKc9wAAAAJ" target="_blank" rel="noopener"><span class="dot"></span>Scholar</a>
+        <a class="pill" href="https://ikteder.github.io/Portfolio/" target="_blank" rel="noopener"><span class="dot"></span>Portfolio</a>
+      </div>
     </div>
+
     <div class="hero-portrait">
       <img src="Images/mee.jpg" alt="Portrait of Ikteder Akhand Udoy" />
     </div>
   </header>
 
-  <!-- EDUCATION (FIRST) -->
-
+  <!-- EDUCATION -->
   <section class="container" id="education">
     <h2 class="section-title">Education</h2>
     <p class="section-sub">Current degree and background.</p>
     <div class="grid cols-2">
       <div class="card">
         <h3>Boise State University</h3>
-        <p class="muted">PhD in Computing, Computer Vision and Data Science · 2023 to present</p>
-        <p>Low Power Integrated Circuits and Embedded Systems Lab, advisor Dr. Omiya Hassan</p>
+        <p class="muted">PhD in Computing (Computer Vision & Data Science) · 2023–Present</p>
+        <p>LPiNS Lab · Advisor: Dr. Omiya Hassan</p>
       </div>
       <div class="card">
         <h3>American International University Bangladesh</h3>
-        <p class="muted">BSc in Computer Science and Engineering · 2017 to 2021</p>
-        <p>Focused on core CS fundamentals and software projects</p>
+        <p class="muted">BSc in Computer Science & Engineering · 2017–2021</p>
+        <p>Strong CS fundamentals and software projects</p>
       </div>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-
   <section class="container" id="experience">
     <h2 class="section-title">Experience</h2>
     <p class="section-sub">Research, teaching support, and industry experience.</p>
 
-```
-<div class="grid cols-2">
-  <div class="card">
-    <h3>Graduate Research Assistant · Boise State University, LPiNS Lab</h3>
-    <p class="muted">2023 to present · Boise, Idaho</p>
-    <p>
-      Research role with hands-on engineering work in data pipelines, deep learning experiments, and reproducibility.
-      Teaching support responsibilities are included in the same role.
-    </p>
-    <div class="tags">
-      <span class="tag">Python</span>
-      <span class="tag">Data Pipelines</span>
-      <span class="tag">Deep Learning</span>
-      <span class="tag">Reproducibility</span>
-    </div>
-    <ul class="muted" style="margin: 0; padding-left: 18px;">
-      <li>Built Python pipelines to ingest and standardize multi-source datasets into a single schema for repeatable analysis.</li>
-      <li>Designed structured experiments and logged metrics to CSV for A versus B comparisons, plots, and clean README notes.</li>
-      <li>Wrote export and verify scripts to replay runs and flag mismatches, similar to unit tests for model stages.</li>
-      <li>Supported courses in algorithms, data structures, and digital systems by reviewing code, debugging edge cases, and helping teams run on Linux lab machines.</li>
-      <li>Delivered an IEEE TinyML workshop in 2025, guiding students from data collection to on-device testing with repeatable handouts.</li>
-    </ul>
-  </div>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>Graduate Research Assistant · Boise State University (LPiNS Lab)</h3>
+        <p class="muted">2023–Present · Boise, Idaho</p>
+        <p>
+          Research + engineering work in data pipelines, deep learning experiments, reproducibility, and deployment-aware validation.
+          TA/teaching support is part of the same role.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pipelines</span>
+          <span class="tag">Deep Learning</span>
+          <span class="tag">Reproducibility</span>
+          <span class="tag">LLM Workflows</span>
+        </div>
+        <ul class="clean">
+          <li>Built Python pipelines to ingest and standardize multi-source datasets into a consistent schema.</li>
+          <li>Designed ablations and logged metrics (CSV/JSON) for clear A/B comparisons and reporting.</li>
+          <li>Implemented export + verification scripts to replay runs and catch mismatches before deployment.</li>
+          <li>Supported algorithms/data structures/digital systems coursework: debugging, code reviews, Linux lab support.</li>
+          <li>Delivered an IEEE TinyML workshop (2025): data collection → training → on-device testing with repeatable handouts.</li>
+        </ul>
+      </div>
 
-  <div class="card">
-    <h3>Junior Project Manager · Playense</h3>
-    <p class="muted">2021 to 2023</p>
-    <p>Coordinated software tasks across contributors and kept delivery organized through clear updates and tracking.</p>
-    <div class="tags">
-      <span class="tag">Coordination</span>
-      <span class="tag">Documentation</span>
-      <span class="tag">Delivery</span>
+      <div class="card">
+        <h3>Junior Project Manager · Playense</h3>
+        <p class="muted">2021–2023 · Remote</p>
+        <p>Coordinated software tasks and kept delivery organized through clear tracking and communication.</p>
+        <div class="tags">
+          <span class="tag">Coordination</span>
+          <span class="tag">Documentation</span>
+          <span class="tag">Delivery</span>
+        </div>
+        <ul class="clean">
+          <li>Tracked issues, clarified requirements, and communicated status to technical/non-technical stakeholders.</li>
+          <li>Helped teams stay aligned on priorities and timelines through concise reporting.</li>
+        </ul>
+      </div>
     </div>
-    <ul class="muted" style="margin: 0; padding-left: 18px;">
-      <li>Tracked issues, clarified requirements, and communicated status to technical and non-technical partners.</li>
-      <li>Helped teams stay aligned on timelines, risks, and priorities through concise reporting.</li>
-    </ul>
-  </div>
-</div>
-```
-
   </section>
 
   <!-- PROJECTS -->
-
   <section class="container" id="projects">
     <h2 class="section-title">Projects</h2>
-    <p class="section-sub">A mix of research pipelines, tools, and teaching-focused builds.</p>
+    <p class="section-sub">Research pipelines, tools, and hands-on builds.</p>
 
-```
-<div class="grid cols-3">
-  <article class="card">
-    <h3>Multi-Dataset Medical Vision Pipeline</h3>
-    <p>Unified preprocessing and metrics across CheXpert, COVID-19 Radiography, ChestMNIST, BreastMNIST, and EchoNet-Dynamic.</p>
-    <div class="tags"><span class="tag">Data Curation</span><span class="tag">Medical Vision</span><span class="tag">Python</span></div>
-  </article>
+    <div class="grid cols-3">
+      <article class="card">
+        <h3>Shift-Add Inference Simulator (Po2-QAT)</h3>
+        <p>Exports compact model packages and replays layer outputs to validate correctness before deployment.</p>
+        <div class="tags"><span class="tag">Verification</span><span class="tag">Quantization</span><span class="tag">Python</span></div>
+      </article>
 
-  <article class="card">
-    <h3>Vision Training Stack</h3>
-    <p>Reproducible classification and segmentation training with ablations, clean logs, and export-focused packaging.</p>
-    <div class="tags"><span class="tag">PyTorch</span><span class="tag">Segmentation</span><span class="tag">Experiment Logs</span></div>
-  </article>
+      <article class="card">
+        <h3>Vision Training Stack</h3>
+        <p>Reproducible classification/segmentation with ablations, clean logs, and export-friendly packaging.</p>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">CV</span><span class="tag">Experiments</span></div>
+      </article>
 
-  <article class="card">
-    <h3>Shift Add Inference Simulator</h3>
-    <p>Reconstructs exported models and checks stage outputs to catch numerical or data defects before deployment.</p>
-    <div class="tags"><span class="tag">Verification</span><span class="tag">Model Debug</span><span class="tag">Python</span></div>
-  </article>
+      <article class="card">
+        <h3>Dataset QA Toolkit</h3>
+        <p>Schema checks, missingness, split integrity, and distribution sanity checks to prevent silent data bugs.</p>
+        <div class="tags"><span class="tag">Data QA</span><span class="tag">pandas</span><span class="tag">Reliability</span></div>
+      </article>
 
-  <article class="card">
-    <h3>Fabric ETL Orchestrator</h3>
-    <p>Config-driven ETL that ingests tables, validates schema and types, runs idempotent batches, and writes tidy outputs with README notes.</p>
-    <div class="tags"><span class="tag">ETL</span><span class="tag">Validation</span><span class="tag">Pipelines</span></div>
-  </article>
+      <article class="card">
+        <h3>Multi-Dataset Medical Vision Pipeline</h3>
+        <p>Unified preprocessing/metrics across CheXpert, ChestMNIST, BreastMNIST, EchoNet-Dynamic, and more.</p>
+        <div class="tags"><span class="tag">Medical AI</span><span class="tag">Pipelines</span><span class="tag">Python</span></div>
+      </article>
 
-  <article class="card">
-    <h3>Metrics Hub API</h3>
-    <p>Small JSON service to expose run metrics and health endpoints with structured logs and error handling.</p>
-    <div class="tags"><span class="tag">REST</span><span class="tag">APIs</span><span class="tag">JSON</span></div>
-  </article>
+      <article class="card">
+        <h3>LLM Evaluation + RAG Prototypes</h3>
+        <p>Task-driven evaluation, retrieval baselines, and careful logging for repeatable comparisons.</p>
+        <div class="tags"><span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Eval</span></div>
+      </article>
 
-  <article class="card">
-    <h3>TinyML Keyword Spotting</h3>
-    <p>Voice command model from audio collection to training and on-device inference for microcontrollers.</p>
-    <div class="tags"><span class="tag">TinyML</span><span class="tag">KWS</span><span class="tag">Edge</span></div>
-  </article>
-
-  <article class="card">
-    <h3>Gesture and Object Detection Workshop</h3>
-    <p>Hands-on curriculum for students to collect data, train models, and test on edge devices.</p>
-    <div class="tags"><span class="tag">Teaching</span><span class="tag">CV</span><span class="tag">Deployment</span></div>
-  </article>
-
-  <article class="card">
-    <h3>Brain Tumor Detection CNN</h3>
-    <p>Convolutional model for tumor detection with reproducible preprocessing and evaluation.</p>
-    <div class="tags"><span class="tag">TensorFlow</span><span class="tag">CNN</span><span class="tag">CV</span></div>
-  </article>
-
-  <article class="card">
-    <h3>Hospital Management System</h3>
-    <p>Web app with admin, staff, and customer panels and SMS verification for account security.</p>
-    <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-  </article>
-</div>
-```
-
+      <article class="card">
+        <h3>TinyML Workshops</h3>
+        <p>Keyword spotting, gesture, and object detection: guided data collection → training → on-device testing.</p>
+        <div class="tags"><span class="tag">TinyML</span><span class="tag">Edge</span><span class="tag">Teaching</span></div>
+      </article>
+    </div>
   </section>
 
   <!-- PUBLICATIONS -->
-
   <section class="container" id="publications">
     <h2 class="section-title">Publications</h2>
     <p class="section-sub">Selected papers and preprints.</p>
 
-```
-<div class="list">
-  <div class="pub">
-    <div class="pub-title">
-      <a href="https://www.mdpi.com/2073-8994/17/3/469" target="_blank" rel="noopener">
-        AI Driven Technology in Heart Failure Detection and Diagnosis: A Review
-      </a>
+    <div class="list">
+      <div class="pub">
+        <div class="pub-title">
+          <a href="https://www.mdpi.com/2073-8994/17/3/469" target="_blank" rel="noopener">
+            AI Driven Technology in Heart Failure Detection and Diagnosis: A Review
+          </a>
+        </div>
+        <div class="pub-meta">Symmetry · 2025</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          <a href="https://ieeexplore.ieee.org/abstract/document/11068064/" target="_blank" rel="noopener">
+            Lightweight Binarized Neural Network for Real Time Sleep Apnea Detection on Edge Hardware
+          </a>
+        </div>
+        <div class="pub-meta">IEEE MeMeA · 2025</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          <a href="https://arxiv.org/abs/2407.08839" target="_blank" rel="noopener">
+            A Survey on the Application of Generative Adversarial Networks in Cybersecurity: Prospective, Direction and Open Research Scopes
+          </a>
+        </div>
+        <div class="pub-meta">arXiv · 2024</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">Power-of-Two Quantization-Aware Training for Edge Deployment</div>
+        <div class="pub-meta">Under review</div>
+      </div>
     </div>
-    <div class="pub-meta">Symmetry · 2025</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">
-      <a href="https://ieeexplore.ieee.org/abstract/document/11068064/" target="_blank" rel="noopener">
-        Lightweight Binarized Neural Network for Real Time Sleep Apnea Detection on Edge Hardware
-      </a>
-    </div>
-    <div class="pub-meta">IEEE MeMeA · 2025</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">
-      <a href="https://arxiv.org/abs/2407.08839" target="_blank" rel="noopener">
-        A Survey on the Application of Generative Adversarial Networks in Cybersecurity: Prospective, Direction and Open Research Scopes
-      </a>
-    </div>
-    <div class="pub-meta">arXiv · 2024</div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">Power of Two Quantization Aware Training for Edge Deployment</div>
-    <div class="pub-meta">Under review</div>
-  </div>
-</div>
-```
-
   </section>
 
   <!-- SKILLS -->
-
   <section class="container" id="skills">
     <h2 class="section-title">Skills</h2>
     <p class="section-sub">Things I use most often.</p>
 
-```
-<div class="skills">
-  <div class="card">
-    <h3>Core</h3>
-    <ul>
-      <li><strong>Languages</strong>: Python, Java, C++, SQL, Bash</li>
-      <li><strong>CS</strong>: data structures, algorithms, debugging, clean code</li>
-      <li><strong>Workflow</strong>: Git, GitHub, reproducible experiments</li>
-    </ul>
-  </div>
+    <div class="skills">
+      <div class="card">
+        <h3>Core</h3>
+        <ul class="clean">
+          <li><strong>Languages</strong>: Python, Java, C++, SQL, Bash</li>
+          <li><strong>CS</strong>: data structures, algorithms, debugging, clean code</li>
+          <li><strong>Workflow</strong>: Git/GitHub, reproducible experiments, documentation</li>
+        </ul>
+      </div>
 
-  <div class="card">
-    <h3>Vision and ML</h3>
-    <ul>
-      <li><strong>Deep learning</strong>: PyTorch, TorchVision, TensorFlow</li>
-      <li><strong>Data</strong>: pandas, numpy, matplotlib, CSV and JSON logs</li>
-      <li><strong>Platforms</strong>: Linux, Colab, Jupyter, Docker basics</li>
-    </ul>
-  </div>
-</div>
-```
-
+      <div class="card">
+        <h3>ML / Systems</h3>
+        <ul class="clean">
+          <li><strong>Deep learning</strong>: PyTorch, TorchVision, TensorFlow (familiar)</li>
+          <li><strong>Data</strong>: pandas, numpy, matplotlib, CSV/JSON logs</li>
+          <li><strong>Platforms</strong>: Linux, Colab/Jupyter, Docker (basics)</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- CONTACT -->
-
   <section class="container" id="contact">
     <h2 class="section-title">Contact</h2>
     <div class="card">
       <div class="contacts">
-        <a href="mailto:iktederakhandudo989@boisestate.edu">Email</a>
-        <span class="dot">•</span>
-        <a href="https://github.com/IAU5" target="_blank" rel="noopener">GitHub</a>
-        <span class="dot">•</span>
-        <a href="https://ikteder.github.io/Portfolio/" target="_blank" rel="noopener">Portfolio</a>
-        <span class="dot">•</span>
-        <a href="https://scholar.google.com/citations?hl=en&user=7CEKc9wAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
-        <span class="dot">•</span>
+        <a href="mailto:iktederakhandudo989@boisestate.edu">iktederakhandudo989@boisestate.edu</a>
+        <span class="sep">•</span>
         <a href="https://www.linkedin.com/in/ikteder-akhand-udoy-680a4122a" target="_blank" rel="noopener">LinkedIn</a>
-        <span class="dot">•</span>
-        <span>Phone: +1 986 230 7837</span>
+        <span class="sep">•</span>
+        <a href="https://github.com/IAU5" target="_blank" rel="noopener">GitHub</a>
+        <span class="sep">•</span>
+        <a href="https://scholar.google.com/citations?hl=en&user=7CEKc9wAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <span class="sep">•</span>
+        <a href="https://ikteder.github.io/Portfolio/" target="_blank" rel="noopener">Portfolio</a>
+        <span class="sep">•</span>
+        <span>+1 986 230 7837</span>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <div>© <span id="year"></span> Ikteder Akhand Udoy · Boise, Idaho</div>
+      © <span id="year"></span> Ikteder Akhand Udoy · Boise, Idaho
     </div>
   </footer>
 
   <script>
-    // Smooth scroll for same-page links
+    // Smooth scroll
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
@@ -500,9 +614,7 @@
         }
       });
     });
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
