@@ -1,28 +1,112 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ikteder Akhand Udoy — Portfolio</title>
-  <meta name="description" content="Portfolio of Ikteder Akhand Udoy — PhD researcher in computer vision, data science, efficient AI, and software systems at Boise State University." />
-  <meta property="og:title" content="Ikteder Akhand Udoy — Portfolio" />
-  <meta property="og:description" content="PhD researcher building ML systems, data workflows, and efficient AI tooling for software engineering, data science, and R&D roles." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ikteder.github.io/Portfolio/" />
-  <link rel="icon" href="/Portfolio/favicon.ico" />
-  <link rel="shortcut icon" href="/Portfolio/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/Portfolio/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/Portfolio/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/Portfolio/apple-touch-icon.png" />
-  <link rel="manifest" href="/Portfolio/site.webmanifest" />
-  <style>
-    :root{--bg:#0b0c10;--panel:#0f1117;--panel2:#121318;--card:#121525;--text:#e8e8ea;--muted:#b6b6c1;--accent:#7c5cff;--accent2:#00d4ff;--chip:#232735;--border:rgba(255,255,255,.10);--border2:rgba(255,255,255,.16);--shadow:0 14px 40px rgba(0,0,0,.35);--shadow2:0 10px 24px rgba(0,0,0,.22);--maxw:1120px;--radius:18px}
-    @media (prefers-color-scheme: light){:root{--bg:#f6f7fb;--panel:#ffffff;--panel2:#ffffff;--card:#ffffff;--text:#0f1020;--muted:#5b6073;--accent:#5c3dff;--accent2:#0077ff;--chip:#eef0f7;--border:rgba(15,16,32,.12);--border2:rgba(15,16,32,.18);--shadow:0 12px 28px rgba(0,0,0,.12);--shadow2:0 8px 20px rgba(0,0,0,.10)}}
-    *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text)}body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.5}a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-    .nav{position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--panel) 88%,transparent);border-bottom:1px solid var(--border);backdrop-filter:saturate(180%) blur(10px)}.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px;min-width:220px}.brand-badge{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),color-mix(in oklab,var(--accent2),transparent 35%));box-shadow:var(--shadow2);color:#fff;font-weight:900}.menu{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end}.menu a{color:var(--text);opacity:.9;font-weight:700;font-size:13px;padding:6px 10px;border-radius:999px;border:1px solid transparent;transition:transform .12s ease,opacity .12s ease,border-color .12s ease,background .12s ease;white-space:nowrap}.menu a:hover{opacity:1;text-decoration:none;background:color-mix(in oklab,var(--chip) 75%,transparent);border-color:var(--border2);transform:translateY(-1px)}
-    .hero{padding:34px 0 14px;display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:center}.hero-card{background:radial-gradient(900px 400px at 15% 0%, color-mix(in oklab, var(--accent), transparent 70%), transparent),radial-gradient(700px 360px at 80% 20%, color-mix(in oklab, var(--accent2), transparent 78%), transparent),var(--panel);border:1px solid var(--border);border-radius:calc(var(--radius) + 6px);box-shadow:var(--shadow);padding:24px}.hero h1{font-size:clamp(30px,3.8vw,48px);line-height:1.08;margin:0 0 10px;letter-spacing:-.3px}.hero p{color:var(--muted);margin:0 0 14px;font-size:15.8px}.chip-row,.cta-row,.quick-links,.tags,.actions,.contacts{display:flex;flex-wrap:wrap;gap:8px}.chip,.pill,.tag,.action-link{border-radius:999px;border:1px solid transparent;background:color-mix(in oklab,var(--panel2) 90%,transparent)}.chip{background:color-mix(in oklab,var(--chip) 85%,transparent);padding:7px 10px;font-size:12.5px;font-weight:700}.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid transparent;background:linear-gradient(135deg,var(--accent),color-mix(in oklab,var(--accent2),transparent 30%));color:#fff;font-weight:800;box-shadow:var(--shadow2);transition:transform .12s ease,filter .12s ease}.btn:hover{text-decoration:none;transform:translateY(-1px);filter:brightness(1.02)}.btn.secondary{background:transparent;color:var(--accent2);border-color:color-mix(in oklab,var(--accent2),transparent 40); box-shadow:none}.btn.secondary:hover{background:color-mix(in oklab,var(--chip) 70%,transparent)}.quick-links{margin-top:10px;padding-top:14px;border-top:1px solid var(--border)}.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;background:color-mix(in oklab,var(--panel2) 90%,transparent);color:var(--text);font-weight:750;font-size:12.5px;opacity:.94}.pill:hover{text-decoration:none;opacity:1;border-color:var(--border2);background:color-mix(in oklab,var(--chip) 70%,transparent)}.dot{width:8px;height:8px;border-radius:999px;background:var(--accent2);box-shadow:0 0 0 3px color-mix(in oklab,var(--accent2),transparent 75)}.hero-portrait{background:var(--panel);border:1px solid var(--border);border-radius:calc(var(--radius) + 6px);box-shadow:var(--shadow);padding:12px;display:grid;place-items:center;overflow:hidden;min-height:260px}.hero-portrait img{width:100%;max-width:360px;height:auto;border-radius:14px;display:block}
-    section{padding:28px 0}.section-title{font-size:22px;margin:0 0 10px;letter-spacing:-.2px}.section-sub{color:var(--muted);margin:0 0 18px;font-size:15px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat,.card,.pub{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow2)}.stat{padding:16px}.stat-kicker{font-size:12px;font-weight:800;color:var(--accent2);text-transform:uppercase;letter-spacing:.08em}.stat-value{font-size:28px;font-weight:900;margin:6px 0 4px}.stat-text{color:var(--muted);font-size:14px;}.grid{display:grid;gap:16px}.grid.cols-3{grid-template-columns:repeat(3,1fr);}.grid.cols-2{grid-template-columns:repeat(2,1fr);}.card{padding:16px;display:flex;flex-direction:column;gap:10px;transition:transform .12s ease,border-color .12s ease}.card:hover{transform:translateY(-1px);border-color:var(--border2)}.card h3{font-size:16px;margin:0;letter-spacing:-.1px}.card p{margin:0;color:var(--muted)}.tag{background:color-mix(in oklab,var(--chip) 86%,transparent);padding:4px 8px;font-size:12px;font-weight:750;opacity:.96}.action-link{display:inline-flex;align-items:center;justify-content:center;padding:8px 10px;background:color-mix(in oklab,var(--panel2) 90%,transparent);font-size:12.5px;font-weight:800;color:var(--text)}.action-link:hover{text-decoration:none;border-color:var(--border2);background:color-mix(in oklab,var(--chip) 70%,transparent)}ul.clear{margin:0;padding-left:18px;color:var(--muted)}ul.clean li{margin:6px 0}.list{display:flex;flex-direction:column;gap:12px}.pub{padding:14px}.pub-title{font-weight:850}.pub-meta{color:var(--muted);font-size:14px;margin-top:4px}.skills{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}.contacts{justify-content:center;align-items:center;color:var(--muted)}.sep{color:var(--muted);opacity:.8}.footer{padding:34px 0 60px;color:var(--muted);font-size:14px;text-align:center}
-    @media (max-width:920px){.hero{grid-template-columns:1fr}.hero-portrait{order:-1}.grid.cols-3{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr;}.skills{grid-template-columns:1fr}} @media (max-width:720px){.nav-inner{align-items:flex-start}.brand{min-width:unset}.menu{gap:8px;justify-content:flex-start}.menu a{padding:6px 8px}}  @media (max-width:640px){.grid.cols-3,.grid.cols-2,.stats{grid-template-columns:1fr}}  @media (prefers-reduced-motion: reduce){* {scroll-behavior:auto !important;transition:none !important}}
-  </style>
-  <body>
-  <nav class="nav"><div class="container nav-inner"><div class="brand"><div class="brand-badge" aria-hidden="true">IAU</div><div>Ikteder Akhand Udoy</div></div><div class="menu" aria-label="Primary"><a href="#featured">Featured Work</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#publications">Publications?�*
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ikteder Akhand Udoy | Portfolio</title>
+<meta name="description" content="Portfolio of Ikteder Akhand Udoy, PhD researcher in ML systems, data science, computer vision, and efficient AI.">
+<link rel="icon" href="/Portfolio/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/Portfolio/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/Portfolio/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/Portfolio/apple-touch-icon.png">
+<link rel="manifest" href="/Portfolio/site.webmanifest">
+<style>
+:root{--bg:#0b0c10;--panel:#121525;--text:#e8e8ea;--muted:#b6b6c1;--accent:#7c5cff;--accent2:#00d4ff;--border:rgba(255,255,255,.12);--max:1100px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.5}a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}.nav{position:sticky;top:0;background:#0f1117;border-bottom:1px solid var(--border)}.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;flex-wrap:wrap;gap:10px}.brand{font-weight:800}.menu{display:flex;gap:12px;flex-wrap:wrap}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;padding:36px 0 18px}.panel{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:20px}.hero h1{font-size:42px;line-height:1.05;margin:0 0 12px}.muted{color:var(--muted)}.chips,.links,.actions,.tags{display:flex;gap:8px;flex-wrap:wrap}.chip,.tag,.linkpill{padding:7px 10px;border-radius:999px;border:1px solid var(--border);background:#171a25;color:var(--text);font-size:13px}.btn{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:700}.btn.secondary{background:transparent;border:1px solid var(--border);color:var(--accent2)}.photo{display:flex;align-items:center;justify-content:center}.photo img{max-width:100%;border-radius:14px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 0}.stat{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px}.stat b{display:block;font-size:26px;margin:6px 0}.section{padding:24px 0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px}.card h3{margin:0 0 8px}.card p{margin:0 0 10px;color:var(--muted)}ul{margin:0;padding-left:18px;color:var(--muted)}li{margin:6px 0}.pub{margin-bottom:12px}.footer{padding:30px 0 60px;color:var(--muted);text-align:center}@media(max-width:900px){.hero,.grid3,.stats,.grid2{grid-template-columns:1fr 1fr}.photo{order:-1}}@media(max-width:640px){.hero,.grid3,.stats,.grid2{grid-template-columns:1fr}.hero h1{font-size:34px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap"><div class="brand">Ikteder Akhand Udoy</div><div class="menu"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#publications">Publications</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
+<header class="wrap hero">
+  <div class="panel">
+    <h1>ML systems, data science, and research engineering</h1>
+    <p class="muted">I am a PhD researcher at Boise State University working across software engineering, data science, computer vision, efficient AI, and deployment-aware evaluation. I build reproducible ML workflows, practical analytics projects, and research tooling that make experiments easier to trust and results easier to communicate.</p>
+    <div class="chips">
+      <span class="chip">Software Engineering</span><span class="chip">Data Science</span><span class="chip">Computer Vision</span><span class="chip">Efficient AI</span><span class="chip">LLM Evaluation</span><span class="chip">Python</span>
+    </div>
+    <div class="actions" style="margin-top:14px">
+      <a class="btn" href="#work">Featured work</a>
+      <a class="btn secondary" href="#publications">Publications</a>
+    </div>
+    <div class="links" style="margin-top:14px">
+      <a class="linkpill" href="mailto:iktederakhandudo989@boisestate.edu">Email</a>
+      <a class="linkpill" href="https://www.linkedin.com/in/ikteder-akhand-udoy-680a4122a" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="linkpill" href="https://github.com/Ikteder" target="_blank" rel="noopener">GitHub</a>
+      <a class="linkpill" href="https://scholar.google.com/citations?hl=en&user=7CEKc9wAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+  </div>
+  <div class="panel photo"><img src="Images/mee.jpg" alt="Portrait of Ikteder Akhand Udoy"></div>
+</header>
+<section class="wrap section">
+  <div class="stats">
+    <div class="stat"><span class="muted">Publications</span><b>3+</b><div class="muted">Published work in efficient AI and healthcare AI.</div></div>
+    <div class="stat"><span class="muted">Focus</span><b>ML Systems</b><div class="muted">Reproducible workflows, evaluation tooling, and deployment-aware experimentation.</div></div>
+    <div class="stat"><span class="muted">Strength</span><b>Analytics + Research</b><div class="muted">Comfortable with both business-facing data projects and research engineering.</div></div>
+    <div class="stat"><span class="muted">Platform</span><b>Python / Linux</b><div class="muted">Hands-on work across notebooks, scripts, and server-based experimentation.</div></div>
+  </div>
+</section>
+<section class="wrap section" id="work">
+  <h2>Featured work</h2>
+  <div class="grid3">
+    <div class="card">
+      <h3>Customer Churn and Revenue Risk Analytics</h3>
+      <p>End-to-end churn modeling workflow combining business analysis, feature engineering, classification, revenue-risk prioritization, and decision support.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">scikit-learn</span><span class="tag">SQL</span><span class="tag">Streamlit</span></div>
+      <ul><li>Built a reproducible pipeline for churn prediction and retention analysis.</li><li>Compared multiple models and linked outputs to revenue-risk prioritization.</li><li>Structured outputs for dashboards and executive summaries.</li></ul>
+      <div class="actions"><a class="linkpill" href="https://github.com/Ikteder/Customer-Churn-Revenue-Risk-Analytics" target="_blank" rel="noopener">GitHub repo</a></div>
+    </div>
+    <div class="card">
+      <h3>Demand Forecasting and Inventory Decision Support</h3>
+      <p>Store-product demand forecasting project focused on feature engineering, forecast comparison, and translating prediction error into inventory planning signals.</p>
+      <div class="tags"><span class="tag">Time Series</span><span class="tag">Forecasting</span><span class="tag">Feature Engineering</span><span class="tag">Inventory Analytics</span></div>
+      <ul><li>Built lag, rolling, and calendar-driven features for short-horizon demand forecasting.</li><li>Compared baseline forecasting approaches and summarized horizon reliability.</li><li>Converted forecast error into understock and overstock risk for decision support.</li></ul>
+      <div class="actions"><a class="linkpill" href="https://github.com/Ikteder/React_project_Webdesign" target="_blank" rel="noopener">GitHub repo</a></div>
+    </div>
+    <div class="card">
+      <h3>Predictive Maintenance and Anomaly Detection</h3>
+      <p>Early-warning system for industrial equipment using multivariate sensor streams, anomaly detection, failure-risk prediction, and operations-friendly reporting.</p>
+      <div class="tags"><span class="tag">NASA C-MAPSS</span><span class="tag">Anomaly Detection</span><span class="tag">XGBoost</span><span class="tag">R&amp;D</span></div>
+      <ul><li>Modeled degradation and failure-risk behavior from sequential sensor data.</li><li>Combined supervised and unsupervised approaches in one evaluation workflow.</li><li>Added interpretable signal-level insights and reporting artifacts.</li></ul>
+      <div class="actions"><a class="linkpill" href="https://github.com/Ikteder/predictive-maintenance-showcase" target="_blank" rel="noopener">GitHub repo</a></div>
+    </div>
+  </div>
+</section>
+<section class="wrap section" id="experience">
+  <h2>Experience</h2>
+  <div class="grid2">
+    <div class="card"><h3>Graduate Research Assistant, Boise State University</h3><p>2023 to present</p><ul><li>Built reproducible ML workflows for computer vision and efficient AI experiments across multiple datasets and model families.</li><li>Developed evaluation scripts, export tooling, and analysis pipelines to make results easier to validate and compare.</li><li>Worked on quantization, edge deployment, model verification, and healthcare AI problems.</li><li>Supported labs, debugging help, grading, and technical workshops.</li></ul></div>
+    <div class="card"><h3>Junior Project Manager, Playense</h3><p>2021 to 2023</p><ul><li>Coordinated software tasks, clarified requirements, and kept teams aligned on deadlines and deliverables.</li><li>Communicated status clearly across technical and non-technical stakeholders.</li><li>Helped keep project execution organized through documentation and follow-through.</li></ul></div>
+  </div>
+</section>
+<section class="wrap section" id="education">
+  <h2>Education</h2>
+  <div class="grid2">
+    <div class="card"><h3>Boise State University</h3><p>PhD in Computing, Computer Vision and Data Science, 2023 to present</p><p>LPiNS Lab. Advisor: Dr. Omiya Hassan.</p></div>
+    <div class="card"><h3>American International University Bangladesh</h3><p>BSc in Computer Science and Engineering, 2017 to 2021</p><p>Strong foundation in software engineering, algorithms, and systems work.</p></div>
+  </div>
+</section>
+<section class="wrap section" id="publications">
+  <h2>Publications</h2>
+  <div class="card">
+    <div class="pub"><b><a href="https://www.mdpi.com/2073-8994/17/3/469" target="_blank" rel="noopener">AI Driven Technology in Heart Failure Detection and Diagnosis: A Review</a></b><div class="muted">Symmetry, 2025</div></div>
+    <div class="pub"><b><a href="https://ieeexplore.ieee.org/abstract/document/11068064/" target="_blank" rel="noopener">Lightweight Binarized Neural Network for Real Time Sleep Apnea Detection on Edge Hardware</a></b><div class="muted">IEEE MeMeA, 2025</div></div>
+    <div class="pub"><b><a href="https://arxiv.org/abs/2407.08839" target="_blank" rel="noopener">A Survey on the Application of Generative Adversarial Networks in Cybersecurity: Prospective, Direction and Open Research Scopes</a></b><div class="muted">arXiv, 2024</div></div>
+    <div class="pub"><b>Power-of-Two Quantization-Aware Training for Edge Deployment</b><div class="muted">Current research focus</div></div>
+  </div>
+</section>
+<section class="wrap section" id="skills">
+  <h2>Skills</h2>
+  <div class="grid3">
+    <div class="card"><h3>Software</h3><ul><li>Python, Java, C plus plus, SQL, Bash</li><li>Git and GitHub, Linux, notebooks and scripts</li><li>Debugging, reproducibility, experiment organization, documentation</li></ul></div>
+    <div class="card"><h3>Data science</h3><ul><li>pandas, numpy, matplotlib, feature engineering, model comparison</li><li>Classification, forecasting, analytics, error analysis, dashboards</li><li>Decision-support workflows and business-oriented reporting</li></ul></div>
+    <div class="card"><h3>ML and research</h3><ul><li>PyTorch, computer vision, efficient AI, model evaluation</li><li>Quantization-aware training, edge deployment, LLM evaluation workflows</li><li>Healthcare AI and deployment-aware validation</li></ul></div>
+  </div>
+</section>
+<section class="wrap section" id="contact">
+  <h2>Contact</h2>
+  <div class="card"><div class="links"><a class="linkpill" href="mailto:iktederakhandudo989@boisestate.edu">iktederakhandudo989@boisestate.edu</a><a class="linkpill" href="https://www.linkedin.com/in/ikteder-akhand-udoy-680a4122a" target="_blank" rel="noopener">LinkedIn</a><a class="linkpill" href="https://github.com/Ikteder" target="_blank" rel="noopener">GitHub</a><a class="linkpill" href="https://scholar.google.com/citations?hl=en&user=7CEKc9wAAAAJ" target="_blank" rel="noopener">Google Scholar</a><span class="linkpill">Boise, Idaho</span></div></div>
+</section>
+<footer class="footer"><div class="wrap">Copyright <span id="year"></span> Ikteder Akhand Udoy</div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
